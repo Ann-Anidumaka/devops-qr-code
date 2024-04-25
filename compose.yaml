@@ -1,10 +1,11 @@
-
 version: '3'
 
 services:
   api:
     container_name: apiimage
-    image: python:3.9-alpine
+    build:
+      context: /api
+      dockerfile: dockerfile
     ports:
       - "8000:8000"
     networks:
@@ -13,10 +14,12 @@ services:
    
   front-end-nexjs:
     container_name: frontendimage
-    image: node:18-alpine
+    build:
+      context: /front-end-nextjs
+      dockerfile: dockerfile
     ports: 
       - "3000:3000"
-    working_dir: /front-end-nexjs
+    working_dir: /front-end-nextjs
     networks:
       - qrgen
 
