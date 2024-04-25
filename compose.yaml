@@ -9,8 +9,7 @@ services:
     networks:
       - qrgen
     working_dir: /api
-    environment:
-
+   
   front-end-nexjs:
     image: node:18-alpine
     ports: 
@@ -19,9 +18,3 @@ services:
     networks:
       - qrgen
 
-configs:
-  some_config:
-
-
-secrets:
-  some_secret:
