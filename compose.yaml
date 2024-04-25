@@ -14,7 +14,10 @@ services:
     image: node:18-alpine
     ports: 
       - "3000:3000"
-    Working_dir: /front-end-nexjs
+    working_dir: /front-end-nexjs
     networks:
       - qrgen
+
+networks:
+  qrgen:
 
