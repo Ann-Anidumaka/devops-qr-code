@@ -3,6 +3,7 @@ version: '3'
 
 services:
   api:
+    container_name: apiimage
     image: python:3.9-alpine
     ports:
       - "8000:8000"
@@ -11,6 +12,7 @@ services:
     working_dir: /api
    
   front-end-nexjs:
+    container_name: frontendimage
     image: node:18-alpine
     ports: 
       - "3000:3000"
@@ -20,4 +22,7 @@ services:
 
 networks:
   qrgen:
+    name: qrgen
+    driver: bridge
+    external: true
 
